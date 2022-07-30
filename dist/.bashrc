@@ -1,0 +1,5 @@
+alias gps="git push"
+alias gst="git status"
+alias gad="git add"
+alias gco="git commit"
+alias gcm="git commit -m"
