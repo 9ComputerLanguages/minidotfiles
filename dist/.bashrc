@@ -10,7 +10,11 @@ alias gdf="git diff"
 alias grb="git rebase"
 alias glg='git log --oneline --decorate --graph --all'
 alias gl='git log --decorate'
-alias gch='git checkout'
-export PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\w\[\033[00m\]($(git branch --contains | cut -d " " -f 2))\n$ "
+
+set_prompt() {
+  PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\w\[\033[00m\]($(git branch --show-current 2>/dev/null))\n$ "
+}
+
+PROMPT_COMMAND=set_prompt
 # 9sako6@/workspace(main)
 # $ 
